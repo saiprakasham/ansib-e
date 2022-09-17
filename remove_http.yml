@@ -1,0 +1,8 @@
+---
+- hosts: devops
+  become: true
+  tasks:
+    - name: Install Apache HTTP server
+      yum: name="{{a}}" update_cache=yes state="{{b}}"
+    - name: Start HTTP Server
+      service: name="{{a}}" enabled=yes state=started
